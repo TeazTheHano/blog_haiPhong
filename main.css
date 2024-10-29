@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'HK-Black';
+    src: url('./asset/fonts/HankenGrotesk-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HK-Bold';
+    src: url('./asset/fonts/HankenGrotesk-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HK-Medium';
+    src: url('./asset/fonts/HankenGrotesk-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HK-Regular';
+    src: url('./asset/fonts/HankenGrotesk-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HK-SemiBold';
+    src: url('./asset/fonts/HankenGrotesk-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HK-Thin';
+    src: url('./asset/fonts/HankenGrotesk-Thin.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HK-Light';
+    src: url('./asset/fonts/HankenGrotesk-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'sectionTitle';
+    src: url('./asset/fonts/HammersmithOne-Regular.ttf') format('truetype');
+}
+
+:root {
+    font-size: 24px;
+    font-family: 'HK-Medium', sans-serif;
+    --title-font: 'HK-Black', sans-serif;
+    --black-80: rgb(34, 13, 13);
+    --black-60: rgb(60, 60, 60);
+    --black-40: rgb(100, 100, 100);
+    --navActive: rgb(124, 66, 0);
+    --bg-yellow-20: rgb(225, 217, 186);
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 768px) {
+    :root {
+        font-size: 80.5%;
+    }
+}
+
+body {
+    width: 100dvw;
+}
+
+section {
+    width: 100dvw;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: var(--bg-yellow-20);
+}
+
+section[extraHeight] {
+    min-height: 100dvh !important;
+}
+
+section[fixHeight] {
+    height: 100dvh;
+}
+
+section h2 {
+    font-family: var(--title-font);
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    color: var(--black-80);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+nav {
+    width: 100%;
+    padding: 0 2rem;
+    background-color: rgb(245, 245, 239);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a.logo {
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+}
+
+nav a {
+    color: var(--black-60);
+    font-family: "HK-Bold", sans-serif;
+}
+
+nav a:hover {
+    color: black;
+}
+
+nav a[active] {
+    color: var(--navActive);
+}
+
+.bgImgCoverCenter {
+    background-size: cover;
+    background-position: center;
+}
+
+#home_downIMG>img {
+    width: 100%;
+    aspect-ratio: 5/3;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+#home_theLore {
+    padding-left: 10%;
+    padding-right: 10%;
+    gap: 1rem;
+}
+
+#home_theLore p {
+    width: 100%;
+    font-size: 1.2rem;
+    font-family: 'HK-Light', sans-serif;
+    text-align: justify;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 80%;
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+.grid2 h3,
+h3.articleTitle {
+    font-family: 'HK-Bold';
+    color: var(--black-80);
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+img[class*="ONEPAGEHEIGHTMAXWITHPAD"] {
+    object-fit: contain;
+}
+
+#home_slider {
+    width: 100%;
+    height: 20rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#home_slider img:first-child {
+    margin-left: 2rem;
+}
+
+.slider-control {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+}
+
+.slider-control div {
+    border: none;
+    font-size: 1.5rem;
+    color: white !important;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+    align-items: center;
+    padding: 1rem;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    opacity: 0.7;
+    border-radius: 1rem;
+    margin: 0.5rem;
+}
