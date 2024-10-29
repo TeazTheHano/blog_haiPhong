@@ -37,7 +37,7 @@ function createImageSlider(sliderId, imgList, nextBtnId, backBtnId) {
         images.forEach((img, i) => {
             img.classList.toggle('current-img', i === index);
         });
-        slider.scrollLeft = images[index].offsetLeft;
+        slider.scrollLeft = index == 0 ? 0 : images[index].offsetLeft - images[0].offsetLeft;
     }
 
     function initializeSlider() {
@@ -88,6 +88,7 @@ const imgList = [
 
 createImageSlider('priviteDinner_slider', imgList, 'priviteDinner_slider_next', 'priviteDinner_slider_back');
 createImageSlider('community_slider', imgList, 'community_slider_next', 'community_slider_back');
+createImageSlider('zeroWaste_slider', imgList, 'zeroWaste_slider_next', 'zeroWaste_slider_back');
 
 // const AutoScroller = () => {
 //     const itemScroll = document.getElementById('home_slider');

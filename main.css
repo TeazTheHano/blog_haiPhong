@@ -180,17 +180,16 @@ img[class*="ONEPAGEHEIGHTMAXWITHPAD"] {
     object-fit: contain;
 }
 
-#priviteDinner_slider, #community_slider {
-    width: 100%;
+div[id$="_slider"] {
+    width: 94%;
     height: 20rem;
     overflow: hidden;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     gap: 1rem;
-}
-
-#priviteDinner_slider img:first-child {
-    margin-left: 2rem;
+    margin: 0 auto;
+    transition: all 0.5s ease-in-out;
 }
 
 .slider-control {
@@ -198,7 +197,8 @@ img[class*="ONEPAGEHEIGHTMAXWITHPAD"] {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: inherit;
+    width: 100%;
+    padding: 0 2%;
     overflow: hidden;
 }
 
@@ -220,5 +220,9 @@ img[class*="ONEPAGEHEIGHTMAXWITHPAD"] {
 }
 
 .current-img {
-    border: 0.25rem solid white;
+    border: 0.15rem solid white;
+}
+
+.width-100I {
+    width: 100% !important;
 }
