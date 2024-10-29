@@ -8,7 +8,7 @@ function sectionHeightConfig() {
     });
 
     let itemWithPad = document.querySelectorAll('.ONEPAGEHEIGHTWITHPAD');
-    items.forEach(item => {
+    itemWithPad.forEach(item => {
         item.style.minHeight = `calc(100dvh - ${navHeight}px - 2rem)`;
     });
 
@@ -30,40 +30,19 @@ sectionHeightConfig();
 
 function createImageSlider(sliderId, imgList, nextBtnId, backBtnId) {
     let currentIndex = 0;
-    let clickCount = 0;
 
-    function changeImage(src) {
+    function changeImage(index) {
         const slider = document.querySelector(`#${sliderId}`);
-        const currentImg = slider.querySelector('.current-img');
-        if (currentImg) {
-            currentImg.classList.remove('current-img');
-        }
-
-        let totalWidth = 0;
-        slider.querySelectorAll('img').forEach(img => {
-            totalWidth += img.offsetWidth;
+        const images = slider.querySelectorAll('img');
+        images.forEach((img, i) => {
+            img.classList.toggle('current-img', i === index);
         });
-
-        const newImg = slider.querySelector(`img[src="${src}"]`);
-        if (newImg) {
-            newImg.classList.add('current-img');
-            slider.scrollLeft = newImg.offsetLeft;
-        }
-
-        let a = totalWidth - slider.scrollLeft - slider.clientWidth;
-        if (a < 0) {
-            clickCount++;
-            if (clickCount >= 2) {
-                slider.scrollLeft = 0;
-                slider.querySelector('img').classList.add('current-img');
-                currentIndex = 0;
-                clickCount = 0;
-            }
-        }
+        slider.scrollLeft = images[index].offsetLeft;
     }
 
     function initializeSlider() {
         const slider = document.querySelector(`#${sliderId}`);
+        slider.innerHTML = ''; // Clear existing images
 
         imgList.forEach((src, index) => {
             const img = document.createElement('img');
@@ -72,7 +51,6 @@ function createImageSlider(sliderId, imgList, nextBtnId, backBtnId) {
             if (index === 0) {
                 img.classList.add('current-img');
             }
-            img.id = `${sliderId}-img-${index}`;
             slider.appendChild(img);
         });
 
@@ -81,13 +59,13 @@ function createImageSlider(sliderId, imgList, nextBtnId, backBtnId) {
 
         const updateCurrentImage = (increment) => {
             currentIndex = (currentIndex + increment + imgList.length) % imgList.length;
-            changeImage(imgList[currentIndex]);
+            changeImage(currentIndex);
         };
 
         backBtn.addEventListener('click', () => updateCurrentImage(-1));
         nextBtn.addEventListener('click', () => updateCurrentImage(1));
 
-        changeImage(imgList[0]);
+        changeImage(0);
     }
 
     initializeSlider();
@@ -108,7 +86,8 @@ const imgList = [
     "asset/photos/crew5.jpeg",
 ];
 
-createImageSlider('home_slider', imgList, 'home_slider_next', 'home_slider_back');
+createImageSlider('priviteDinner_slider', imgList, 'priviteDinner_slider_next', 'priviteDinner_slider_back');
+createImageSlider('community_slider', imgList, 'community_slider_next', 'community_slider_back');
 
 // const AutoScroller = () => {
 //     const itemScroll = document.getElementById('home_slider');
