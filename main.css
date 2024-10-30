@@ -171,6 +171,13 @@ h3.articleTitle {
     margin: 0.5rem 0;
 }
 
+h3.articleTitleBigger {
+    font-size: 2rem;
+    font-family: 'HK-Bold';
+    color: var(--black-80);
+    margin: 0.5rem 0;
+}
+
 img[class*="ONEPAGEHEIGHTMAXWITHPAD"] {
     object-fit: contain;
 }
@@ -227,6 +234,21 @@ div[id$="_slider"] {
     font-family: 'HK-Light', sans-serif;
 }
 
+.grid2border {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 2.25rem 1.5rem;
+    border: 0.15rem solid var(--black-60);
+    border-radius: 2rem;
+    align-items: center;
+}
+
+.grid2border p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 #footerInfo {
     display: flex;
     flex-flow: wrap row;
@@ -244,4 +266,30 @@ div[id$="_slider"] {
         flex-flow: column;
         padding: 1rem 0;
     }
+
+    .grid2,
+    .grid2border {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-aspect-ratio: 21/9) {
+    body {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    html {
+        background-color: var(--grey-footer);
+    }
+}
+
+.bookTable {
+    border-radius: 1rem;
+    color: white;
+    font-family: var(--title-font);
+    background-color: var(--grey-footer);
+    padding: 1rem;
+    width: fit-content;
+    align-self: center;
+    cursor: pointer;
 }

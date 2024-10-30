@@ -14,7 +14,7 @@ function sectionHeightConfig() {
 
     let marginNavTop = document.querySelectorAll('.margin-nav-top');
     marginNavTop.forEach(item => {
-        item.style.marginTop = `${navHeight}px`;
+        item.style.paddingTop = `${navHeight}px`;
     });
 
     let itemMax1PageHeight = document.querySelectorAll('.ONEPAGEHEIGHTMAX');
@@ -124,6 +124,10 @@ function navActiveTracker() {
     let infoSectionYaxis = infoSection.getBoundingClientRect().top + window.scrollY;
     let recipesSection = document.querySelector('section#recipes')
     let recipesSectionYaxis = recipesSection.getBoundingClientRect().top + window.scrollY;
+    let reservationSection = document.querySelector('section#reservation')
+    let reservationSectionYaxis = reservationSection.getBoundingClientRect().top + window.scrollY;
+    let faqSection = document.querySelector('section#faq')
+    let faqSectionYaxis = faqSection.getBoundingClientRect().top + window.scrollY;
 
 
     let nav = document.querySelector('nav');
@@ -152,9 +156,17 @@ function navActiveTracker() {
             navItems[3].classList.remove('active');
             navItems[4].classList.add('active');
             navItems[5].classList.remove('active');
-        } else {
+        } else if (currentYaxis < reservationSectionYaxis) {
             navItems[4].classList.remove('active');
             navItems[5].classList.add('active');
+            navItems[6].classList.remove('active');
+        } else if (currentYaxis < faqSectionYaxis) {
+            navItems[5].classList.remove('active');
+            navItems[6].classList.add('active');
+            navItems[7].classList.remove('active');
+        } else {
+            navItems[6].classList.remove('active');
+            navItems[7].classList.add('active');
         }
     }
 
