@@ -12,8 +12,10 @@ function sectionHeightConfig() {
         item.style.minHeight = `calc(100dvh - ${navHeight}px - 2rem)`;
     });
 
-    let marginNavTop = document.querySelector('.margin-nav-top');
-    marginNavTop.style.paddingTop = `${navHeight}px`;
+    let marginNavTop = document.querySelectorAll('.margin-nav-top');
+    marginNavTop.forEach(item => {
+        item.style.marginTop = `${navHeight}px`;
+    });
 
     let itemMax1PageHeight = document.querySelectorAll('.ONEPAGEHEIGHTMAX');
     itemMax1PageHeight.forEach(item => {
@@ -110,3 +112,66 @@ createImageSlider('zeroWaste_slider', imgList, 'zeroWaste_slider_next', 'zeroWas
 // };
 
 // AutoScroller();
+
+function navActiveTracker() {
+    let homeSection = document.querySelector('section#home')
+    let homeSectionYaxis = homeSection.getBoundingClientRect().top + window.scrollY;
+    let menuSection = document.querySelector('section#menu')
+    let menuSectionYaxis = menuSection.getBoundingClientRect().top + window.scrollY;
+    let activitesSection = document.querySelector('section#activites')
+    let activitesSectionYaxis = activitesSection.getBoundingClientRect().top + window.scrollY;
+    let infoSection = document.querySelector('section#info')
+    let infoSectionYaxis = infoSection.getBoundingClientRect().top + window.scrollY;
+    let recipesSection = document.querySelector('section#recipes')
+    let recipesSectionYaxis = recipesSection.getBoundingClientRect().top + window.scrollY;
+
+
+    let nav = document.querySelector('nav');
+    let navItems = nav.querySelectorAll('a');
+
+    function updateActiveSection() {
+        let currentYaxis = window.scrollY;
+        if (currentYaxis < homeSectionYaxis) {
+            navItems[0].classList.add('active');
+            navItems[1].classList.remove('active');
+        } else if (currentYaxis < menuSectionYaxis) {
+            navItems[0].classList.remove('active');
+            navItems[1].classList.add('active');
+            navItems[2].classList.remove('active');
+        }
+        else if (currentYaxis < activitesSectionYaxis) {
+            navItems[1].classList.remove('active');
+            navItems[2].classList.add('active');
+            navItems[3].classList.remove('active');
+        }
+        else if (currentYaxis < infoSectionYaxis) {
+            navItems[2].classList.remove('active');
+            navItems[3].classList.add('active');
+            navItems[4].classList.remove('active');
+        } else if (currentYaxis < recipesSectionYaxis) {
+            navItems[3].classList.remove('active');
+            navItems[4].classList.add('active');
+            navItems[5].classList.remove('active');
+        } else {
+            navItems[4].classList.remove('active');
+            navItems[5].classList.add('active');
+        }
+    }
+
+    updateActiveSection();
+
+    window.addEventListener('scroll', updateActiveSection);
+
+    navItems.forEach((navItem, index) => {
+        navItem.addEventListener('click', () => {
+            if (index === 0) {
+                window.scrollTo({ top: homeSectionYaxis, behavior: 'smooth' });
+            } else {
+                window.scrollTo({ top: menuSectionYaxis, behavior: 'smooth' });
+            }
+        });
+    });
+
+
+}
+navActiveTracker();

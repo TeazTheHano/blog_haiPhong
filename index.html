@@ -55,15 +55,15 @@
             <img src="/asset/photos/logoBlack.png" alt="">
         </a>
         <div class="display-flex-center gap-2">
-            <a href="#home" active>Home</a>
-            <a href="">Menu</a>
-            <a href="">Activites</a>
-            <a href="">Info</a>
-            <a href="">Recipes</a>
+            <a href="#home" class="active">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#activites">Activites</a>
+            <a href="#info">Info</a>
+            <a href="#recipes">Recipes</a>
         </div>
         <div class="display-flex-center gap-1" style="justify-content: flex-end;">
-            <a href="">Reservation</a>
-            <a href="">FAQ</a>
+            <a href="#reservation">Reservation</a>
+            <a href="#faq">FAQ</a>
         </div>
     </nav>
 
@@ -203,6 +203,7 @@
             <div class="padding-3">
                 <h3 class="articleTitle">PRIVATE DINNER</h3>
                 <p>Take a look at past dinner parties hosted by NORO</p>
+                <a class="underline" href="private_dinner">SEE MORE</a>
             </div>
             <div style="position: relative; display: flex; align-items: center;" class="width-100">
                 <div id="priviteDinner_slider"></div>
@@ -236,6 +237,7 @@
             <div>
                 <h3>COMMUNITY OUTREACH</h3>
                 <p class="text-jus">Our Research, Charitable activites, Collaboration and more!</p>
+                <a class="underline" href="community_outreach">SEE MORE</a>
             </div>
 
             <div style="position: relative; display: flex; align-items: center;" class="width-100">
@@ -265,12 +267,13 @@
 
         <!-- >>> -->
 
-        <div class="padding-v-2" style="background-color: rgb(89, 111, 84);">
+        <div class="padding-v-2" style="background-color: var(--green-bg); color: var(--nearly-white);">
             <div class="padding-3">
-                <h3 class="articleTitle">ZERO-WASTE </h3>
+                <h3 class="articleTitle" style="color: var(--nearly-white);">ZERO-WASTE </h3>
                 <p>See our Zero-waste Recipes!</p>
+                <a class="underline" style="color: var(--nearly-white);" href="zero_waste">SEE MORE</a>
             </div>
-            <div style="position: relative; display: flex; align-items: center;" class="width-100">
+            <div style=" position: relative; display: flex; align-items: center;" class="width-100">
                 <div id="zeroWaste_slider"></div>
                 <div class="slider-control">
                     <div id="zeroWaste_slider_back">
@@ -297,7 +300,120 @@
         </div>
 
         <!-- >>> -->
+
+
     </section>
+
+    <section id="menu" class="margin-nav-top width-100" extraHeight>
+        <div class="display-flex-column-between margin-nav-top gap-2 " style="padding: 0 12%; text-align: center;">
+            <h2>ONGOING MENU - 4 SEASONS</h2>
+            <p>4 Seasons - a menu revolved around the seasonal changes of a year. With NORO’s first menu, we aim to
+                bring out the distinct essence of each season into the dishes:</p>
+            <div>
+                <p>Spring - growth, fresh</p>
+                <p>Summer - heat, intense</p>
+                <p>Fall - cozy, homey</p>
+                <p>Winter - cold with hints of warmth</p>
+            </div>
+            <p>Aside the courses included, we also offer simple drinks pairing and sides of sourdough bread with
+                cinnamon sugar butter.</p>
+            <p>Let’s take you with us on a Year of NORO</p>
+            <img src="/asset/photos/menu.png" style="max-width: 1440px;" alt="">
+            <div id="bookTable" class="padding-1" style="border-radius: 1rem; color: white; font-family: var(--title-font); background-color: var(--grey-footer);">BOOK A TABLE</div>
+        </div>
+    </section>
+
+    <section id="activites" class="margin-nav-top width-100" extraHeight>
+        <div class="ONEPAGEHEIGHT">
+            act
+        </div>
+
+    </section>
+
+    <section id="info" class="margin-nav-top width-100" extraHeight>
+
+        <div class="ONEPAGEHEIGHT">
+            inf
+        </div>
+    </section>
+
+    <section id="recipes" class="margin-nav-top width-100" extraHeight>
+        <div class="ONEPAGEHEIGHT">
+            ret
+        </div>
+        <div class="ONEPAGEHEIGHT">
+            ret
+        </div>
+    </section>
+
+    <footer>
+        <div class="width-100 display-flex-around padding-v-2" style=" background-color: var(--nearly-white);">
+            <h2>
+                MAKE A <br>RESERVATION
+            </h2>
+            <div class="display-flex-column-center">
+                Book a table today through our Portal or Contact via Telephone
+                <a class="underline" href="booknow">BOOK NOW</a>
+            </div>
+            <div style="height: 8rem; width: fit-content;"><img src="/asset/photos/phone.png" alt=""></div>
+        </div>
+        <div class="width-100 padding-3" id="footerInfo" style=" background-color: var(--grey-footer);">
+            <div>
+                <h2>MANDARIN GARDEN</h2>
+                <p>Hoang Minh Giam Str, Cau Giay District, Hanoi 10000, VN</p>
+            </div>
+            <div>
+                <div>
+                    <h2>RESERVATION</h2>
+                    <div><a href="noro-lab.com#reservation">noro-lab.com#reservation</a></div>
+                    <div><a href="tel:+8488629107">(+84) 88 629 107</a></div>
+                </div>
+                <div>
+                    <h2>HOURS</h2>
+                    <p>Sundays Only</p>
+                    <p>18:00 - 22:00</p>
+                </div>
+            </div>
+            <div>
+                <h2>EMAIL</h2>
+                <a href="mailto:noro.kitchen@gmail.com">noro.kitchen@gmail.com</a>
+            </div>
+            <div>
+                <h2>SOCIAL</h2>
+                <div class="gap-1 align-center" style="display: flex;">
+                    <a href="https://www.instagram.com/noro.lab/">
+                        <svg width="1.5rem" height="1.5rem" viewBox="0 0 34 34" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <rect x="-2" y="-2" width="30" height="30" rx="5" transform="matrix(0 -1 -1 0 30 30)"
+                                stroke="white" stroke-width="4" />
+                            <rect x="-1.5" y="-1.5" width="19" height="19" rx="9.5" transform="matrix(0 -1 -1 0 25 25)"
+                                stroke="white" stroke-width="3" />
+                            <rect x="-1.5" y="-1.5" width="7" height="7" rx="3.5" transform="matrix(0 -1 -1 0 19 19)"
+                                stroke="white" stroke-width="3" />
+                            <rect width="4" height="4" rx="2" transform="matrix(0 -1 -1 0 29 9)" fill="white" />
+                        </svg>
+
+
+                    </a>
+                    <a href="">
+                        <svg width="2rem" height="2rem" viewBox="0 0 49 49" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_2_37" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                                width="49" height="49">
+                                <rect x="0.536987" y="0.252197" width="48" height="48" fill="#D9D9D9" />
+                            </mask>
+                            <g mask="url(#mask0_2_37)">
+                                <path
+                                    d="M7.79144 40.9586C6.70778 40.9586 5.77661 40.5694 4.99794 39.7911C4.21961 39.0124 3.83044 38.0813 3.83044 36.9976V11.5066C3.83044 10.4153 4.21961 9.47759 4.99794 8.69359C5.77661 7.90926 6.70778 7.51709 7.79144 7.51709H41.2824C42.3738 7.51709 43.3114 7.90926 44.0954 8.69359C44.8798 9.47759 45.2719 10.4153 45.2719 11.5066V36.9976C45.2719 38.0813 44.8798 39.0124 44.0954 39.7911C43.3114 40.5694 42.3738 40.9586 41.2824 40.9586H7.79144ZM24.5369 26.0566L7.79144 14.9066V36.9976H41.2824V14.9066L24.5369 26.0566ZM24.5369 22.4066L41.0824 11.5066H8.04144L24.5369 22.4066ZM7.79144 14.9066V11.5066V36.9976V14.9066Z"
+                                    fill="#fff" />
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
 </body>
 <script src="/main.js"></script>
 
